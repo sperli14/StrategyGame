@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://ib4xela7kjxi"]
+
+[ext_resource type="Texture2D" uid="uid://dlx0ytbmp0g6f" path="res://scenes/components/day_level.png" id="1_uwrxv"]
+[ext_resource type="PackedScene" uid="uid://ecxpmsovdl8t" path="res://scenes/player.tscn" id="2_yqjtg"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yqjtg"]
+
+[node name="Game" type="Node2D" unique_id=1085850370]
+
+[node name="Day" type="Node2D" parent="." unique_id=918442147]
+
+[node name="DayLevel" type="Sprite2D" parent="Day" unique_id=1339958990]
+position = Vector2(-2, 1)
+scale = Vector2(2.665, 2.665)
+texture = ExtResource("1_uwrxv")
+
+[node name="player" parent="Day" unique_id=977830627 instance=ExtResource("2_yqjtg")]
+
+[node name="Camera2D" type="Camera2D" parent="Day" unique_id=82768044]
+zoom = Vector2(0.295, 0.295)
+
+[node name="ground" type="Node2D" parent="Day" unique_id=159488505]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Day/ground" unique_id=44028912]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Day/ground/StaticBody2D" unique_id=139541103]
+position = Vector2(0, 855.07)
+scale = Vector2(52.42, 1.395)
+shape = SubResource("RectangleShape2D_yqjtg")
